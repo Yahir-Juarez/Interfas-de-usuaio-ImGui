@@ -84,7 +84,7 @@ App::input()
     }
     else
     {
-      m_Player1.direction = sf::Vector2f(0.0f, 0.0f);
+      m_Player2.direction = sf::Vector2f(0.0f, 0.0f);
     }
   }
 }
@@ -95,18 +95,43 @@ App::update()
 {
   m_ball.m_player.setPosition(sf::Vector2f(m_ball.m_player.getPosition().x + m_ball.direction.x,
     m_ball.m_player.getPosition().y + m_ball.direction.y));
-  if (m_ball.m_player.getPosition().y > 1055 || m_ball.m_player.getPosition().y < 25)
-  {
+
+  if (m_ball.m_player.getPosition().y > 1055 || m_ball.m_player.getPosition().y < 25) {
     m_ball.direction = sf::Vector2f(m_ball.direction.x, m_ball.direction.y * -1.0f);
   }
-  if (m_ball.m_player.getPosition().x > 1895 || m_ball.m_player.getPosition().x < 25)
-  {
+
+  if (m_ball.m_player.getPosition().x > 1895 || m_ball.m_player.getPosition().x < 25) {
     m_ball.m_player.setPosition(sf::Vector2f(960.0f, 540.0f));
   }
+
   m_Player1.m_player.setPosition(sf::Vector2f(m_Player1.m_player.getPosition().x + m_Player1.direction.x,
     m_Player1.m_player.getPosition().y + m_Player1.direction.y));
+
   m_Player2.m_player.setPosition(sf::Vector2f(m_Player2.m_player.getPosition().x + m_Player2.direction.x,
     m_Player2.m_player.getPosition().y + m_Player2.direction.y));
+
+
+  //std::cout << m_ball.m_player.getPosition().y << " " << 
+
+  if (m_ball.m_player.getPosition().y > m_Player2.m_player.getPosition().y &&
+    m_ball.m_player.getPosition().y < (m_Player2.m_player.getPosition().y + 200))
+  {
+    if (m_ball.m_player.getPosition().x > m_Player2.m_player.getPosition().x &&
+      m_ball.m_player.getPosition().x < (m_Player2.m_player.getPosition().x + 30))
+    {
+      m_ball.direction = sf::Vector2f(m_ball.direction.x * -1.0f, m_ball.direction.y * -1.0f);
+    }
+  }
+
+  if (m_ball.m_player.getPosition().y > m_Player1.m_player.getPosition().y &&
+    m_ball.m_player.getPosition().y < (m_Player1.m_player.getPosition().y + 200))
+  {
+    if (m_ball.m_player.getPosition().x > m_Player1.m_player.getPosition().x &&
+      m_ball.m_player.getPosition().x < (m_Player1.m_player.getPosition().x + 30))
+    {
+      m_ball.direction = sf::Vector2f(m_ball.direction.x * -1.0f, m_ball.direction.y * -1.0f);
+    }
+  }
 }
 
 void
