@@ -1,5 +1,5 @@
 #pragma once
-#include "bePlatformTypes.h"
+#include "PlatformTypes.h"
 #include "GameObject.h"
 
 using namespace beEngineSDK;

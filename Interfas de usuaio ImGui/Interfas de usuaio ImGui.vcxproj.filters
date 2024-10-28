@@ -54,7 +54,7 @@
     <ClInclude Include="GameObject.h">
       <Filter>Header SFML ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="bePlatformTypes.h">
+    <ClInclude Include="PlatformTypes.h">
       <Filter>Header SFML ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Ball.h">

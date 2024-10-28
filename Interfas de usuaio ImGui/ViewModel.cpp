@@ -2,7 +2,7 @@
 
 uint32& ViewModel::GetPlayerOneScore()
 {
-    // TODO: insert return statement here
+  // TODO: insert return statement here
   uint32 x = 0;
   return x;
 }

@@ -4,6 +4,11 @@
 #include "Player.h"
 #include "Ball.h"
 
+#include "View.h"
+
+#include <imgui.h>
+#include <imgui-SFML.h>
+
 class App
 {
  public:
@@ -63,4 +68,10 @@ class App
   Player m_Player1;
   Player m_Player2;
   Ball m_ball;
+
+  View* m_view;
+ private:
+   ImFont* customFont;
+   uint32* player1Score;
+   uint32* player2Score;
 };

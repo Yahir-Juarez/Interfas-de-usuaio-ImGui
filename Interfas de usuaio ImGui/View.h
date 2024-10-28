@@ -4,6 +4,16 @@
 
 class View
 {
-  ViewModel* viewModel;
+ public:
+
+   View()
+   {
+     initializeFonts();
+   }
+
   void draw();
+  ViewModel* viewModel;
+
+private:
+  void initializeFonts();
 };

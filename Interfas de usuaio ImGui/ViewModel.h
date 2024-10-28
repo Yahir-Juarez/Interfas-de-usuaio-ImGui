@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "bePlatformTypes.h"
+#include "PlatformTypes.h"
 
 using namespace beEngineSDK;
 

@@ -4,6 +4,6 @@
 
 class Ball : public GameObject
 {
-public:
+ public:
   void Bounce();
 };
