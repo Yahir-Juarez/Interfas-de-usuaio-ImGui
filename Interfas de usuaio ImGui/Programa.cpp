@@ -6,34 +6,6 @@
 #include "App.h"
 
 int main() {
-  sf::RenderWindow window(sf::VideoMode(sf::Vector2u(800, 600)), "SFML + ImGui");
-  window.setFramerateLimit(60);
-
-  ImGui::SFML::Init(window);
-  View view;
-  view.initializeFonts();
-
-  sf::Clock deltaClock;
-  while (window.isOpen()) {
-    sf::Event event;
-    while (window.pollEvent(event)) {
-      ImGui::SFML::ProcessEvent(event);
-      if (event.type == sf::Event::Closed)
-        window.close();
-    }
-
-    ImGui::SFML::Update(window, deltaClock.restart());
-
-    // Llama a draw directamente en el contexto de ImGui
-    view.draw();
-
-    window.clear();
-    ImGui::SFML::Render(window);  // Dibuja ImGui directamente en SFML
-    window.display();
-  }
-
-  ImGui::SFML::Shutdown();
-  return 0;
   App app;
 
   return 0;

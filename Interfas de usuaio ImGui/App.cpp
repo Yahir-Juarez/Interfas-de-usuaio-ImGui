@@ -134,6 +134,14 @@ void App::update()
   }
 
   if (m_ball.m_player.getPosition().x > 1895 || m_ball.m_player.getPosition().x < 25) {
+    if (m_ball.m_player.getPosition().x > 1895)
+    {
+      (*player1Score)++;
+    }
+    else
+    {
+      (*player2Score)++;
+    }
     m_ball.m_player.setPosition(sf::Vector2f(960.0f, 540.0f));
   }
 
@@ -174,10 +182,9 @@ void App::render()
   }
 
   if (customFont) {
-    ImGui::PopFont();  // Volver a la fuente predeterminada de ImGui
+    ImGui::PopFont();
   }
 
-  // Renderizar ImGui en la ventana de SFML
   ImGui::SFML::Render(*m_pWindow);
 
   m_pWindow->display();

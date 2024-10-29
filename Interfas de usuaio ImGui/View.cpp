@@ -6,26 +6,20 @@
 
 void View::draw()
 {
-  // Activa la fuente personalizada, si está disponible
-  if (ImGui::GetIO().Fonts->Fonts.Size > 0) {
-    ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[0]);
-  }
+  // Puntaje del Jugador 1
+  ImGui::SetNextWindowPos(ImVec2(50, 20)); 
+  ImGui::Begin("Puntaje del Jugador 1", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoTitleBar);
 
-  // Establece la posición en pantalla para el texto (opcional)
-  ImGui::SetCursorPos(ImVec2(50, 50));  // Coordenadas desde la esquina superior izquierda
+  ImGui::Text("Puntaje: %d", viewModel->GetPlayerOneScore());
 
-  // Muestra el puntaje del jugador 1
-  int playerOneScore = viewModel->GetPlayerOneScore();
-  ImGui::Text("Puntaje del Jugador 1: %d", playerOneScore);
+  ImGui::End();
 
-  // Muestra el puntaje del jugador 2
-  int playerTwoScore = viewModel->GetPlayerTwoScore();
-  ImGui::Text("Puntaje del Jugador 2: %d", playerTwoScore);
+  ImGui::SetNextWindowPos(ImVec2(1780, 20)); 
+  ImGui::Begin("Puntaje del Jugador 2", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoTitleBar);
 
-  // Restablece la fuente si fue cambiada
-  if (ImGui::GetIO().Fonts->Fonts.Size > 0) {
-    ImGui::PopFont();
-  }
+  ImGui::Text("Puntaje: %d", viewModel->GetPlayerTwoScore());
+
+  ImGui::End();
 }
 
 void
