@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Interfas de usuaio ImGui", "Interfas de usuaio ImGui\Interfas de usuaio ImGui.vcxproj", "{5F177035-8B10-4F9E-B544-BD0A092A638E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Outlast", "Outlast\Outlast.vcxproj", "{23EEE9BB-B33A-4744-9187-88186BC03697}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{5F177035-8B10-4F9E-B544-BD0A092A638E}.Release|x64.Build.0 = Release|x64
 		{5F177035-8B10-4F9E-B544-BD0A092A638E}.Release|x86.ActiveCfg = Release|Win32
 		{5F177035-8B10-4F9E-B544-BD0A092A638E}.Release|x86.Build.0 = Release|Win32
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Debug|x64.ActiveCfg = Debug|x64
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Debug|x64.Build.0 = Debug|x64
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Debug|x86.ActiveCfg = Debug|Win32
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Debug|x86.Build.0 = Debug|Win32
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Release|x64.ActiveCfg = Release|x64
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Release|x64.Build.0 = Release|x64
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Release|x86.ActiveCfg = Release|Win32
+		{23EEE9BB-B33A-4744-9187-88186BC03697}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
