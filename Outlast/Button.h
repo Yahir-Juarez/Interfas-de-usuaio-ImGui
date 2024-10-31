@@ -3,106 +3,69 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 #include <vector>
+#include <iostream>
+
 namespace UI {
   enum E
   {
-    MENU = 0,
-    PLAY,
-    TUTORIAL,
+    NONE = 0,
+    MENU_INICIO,
+    ENTRAR_A_LA_INSTALACION_MURKOFF,
+    VOLVER_A_JUGAR_LA_INTRODUCCION,
     SETTINGS,
+    GENERAL,
+    LENGUAJE,
+    CONTROLS,
+    GRAPHICS,
+    AUDIO,
+    CONEXION,
     CREDITS,
-    EXIT
+    EXIT_TO_MENU,
+    EXIT_GAME,
+    EXIT_TO_CONTROL,
+    EXIT_TO_GRAPHICS,
+    CLASICO,
+    MODERNO,
+    OPCIONES_AVANZADAS,
+    TACTICO,
+    BRIGHT
   };
 }
 
 class Button {
 public:
-  Button(const std::vector<std::string> text, const sf::Vector2f& position, const sf::Vector2f& size, const ImVec4 Color, int id)
-    : buttonText(text), buttonPosition(position), buttonSize(size), buttonBgColor(Color), m_id(id)
+  Button(const std::vector<std::string> text,
+         const sf::Vector2f& position,
+         const sf::Vector2f& size,
+         const ImVec4 Color,
+         int id,
+         UI::E typeUI = UI::NONE)
+    : buttonText(text), buttonPosition(position), buttonSize(size), buttonBgColor(Color), m_id(id), m_typeUI(typeUI)
   {
     initializeFonts();
   }
 
-  Button(const std::vector<std::string> text, float progress, const sf::Vector2f& position, const sf::Vector2f& size, const ImVec4 Color, int id)
+  Button(const std::vector<std::string> text,
+         float progress,
+         const sf::Vector2f& position,
+         const sf::Vector2f& size,
+         const ImVec4 Color,
+         int id)
     : buttonText(text), progress(progress), buttonPosition(position), buttonSize(size), buttonBgColor(Color), m_id(id) {}
 
-  bool draw(){
-    // Configura el estilo de ImGui y posición del botón
-    ImGui::SetCursorPos(ImVec2(buttonPosition.x, buttonPosition.y));
-    ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(10, 5)); // Padding para el diseño
-
-    // Cambia la fuente del botón
-    ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[1]); // Cambia a tu fuente deseada
-    ImGui::SetWindowFontScale(2); // Establece el tamaño de la fuente
-
-    // Ajusta el color de fondo del botón con transparencia
-    ImGui::PushStyleColor(ImGuiCol_Button, buttonBgColor);
-
-    std::string buttonLabel = buttonText[m_indice] + "##" + std::to_string(m_id);
-    bool isClicked = ImGui::Button(buttonLabel.c_str(), ImVec2(buttonSize.x, buttonSize.y));
-
-    if (isClicked)
-    {
-      m_indice++;
-      if (m_indice >= buttonText.size())
-      {
-        m_indice = 0;
-      }
-    }
-
-    // Restaura el estilo original de ImGui
-    ImGui::PopStyleColor(); // Restaura el color del botón
-    ImGui::PopFont();       // Restaura la fuente original
-    ImGui::PopStyleVar();   // Restaura el estilo original de ImGui
-
-    return isClicked;
-  }
-
-  void drawProgressBar(){
-    //ImGui::SetCursorPos(ImVec2(buttonPosition.x, buttonPosition.y));
-
-    //ImGui::Text("%s", std::to_string(progress).c_str());
-
-    ImGui::SetCursorPos(ImVec2(buttonPosition.x, buttonPosition.y));
-
-    ImGui::PushStyleColor(ImGuiCol_SliderGrab, ImVec4(0.8f, 0.8f, 0.8f, 0.8f)); // Color de la "agarradera"
-    ImGui::PushStyleColor(ImGuiCol_SliderGrabActive, ImVec4(ImVec4(0.8f, 0.8f, 0.8f, 0.8f))); // Color cuando está activo
-    ImGui::PushStyleColor(ImGuiCol_FrameBg, buttonBgColor);             // Color de fondo de la barra
-    ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0, 0, 0, 0.8f));
-
-
-    ImGui::SetNextItemWidth(buttonSize.x);
-
-    std::string sliderLabel = "Slider##" + m_id;
-
-    ImGui::SliderFloat(sliderLabel.c_str(), &progress, 0.0f, 1.0f, "%.1f"); // Slider interactivo
-
-    ImGui::PopStyleColor(4);
-
-  }
-
-  // Obtiene el progreso actual
-  float getProgress() const { return progress; }
-
-  // Permite actualizar el progreso
-  void setProgress(float newProgress) { progress = newProgress; }
+  UI::E draw();
 
   void
-  initializeFonts()
-  {
-    static bool fontsInitialized = false;  // Para cargar la fuente solo una vez
-    if (!fontsInitialized) {
-      ImGuiIO& io = ImGui::GetIO();
+  drawProgressBar();
 
-      // Carga la fuente desde un archivo .ttf, ajusta el tamaño de la fuente según sea necesario
-      ImFont* myFont = io.Fonts->AddFontFromFileTTF("C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/OutlastFont.otf", 18.0f);
-      if (!myFont) {
-        return;
-      }
-      ImGui::SFML::UpdateFontTexture();  // Actualiza la textura de fuente
-      fontsInitialized = true;
-    }
-  }
+  float
+  getProgress() const { return progress; }
+
+  void
+  setProgress(float newProgress) { progress = newProgress; }
+
+  void
+  initializeFonts();
 
 
 private:
@@ -114,6 +77,7 @@ private:
   float progress;
   int m_indice = 0;
   int m_id;
+  UI::E m_typeUI = UI::NONE;
 };
 
 

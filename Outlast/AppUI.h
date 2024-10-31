@@ -64,8 +64,11 @@ private:
 
 	/////////////////////////////////////////////
 	sf::RenderWindow ventana;
-	std::stack<UIClass*> m_ui;
+	std::vector<UIClass*> m_ui;
 
 	sf::Clock deltaClock;
+	UI::E m_typeUI = UI::NONE;
+
+	int m_actualUI = 0;
 	/////////////////////////////////////////////
 };

@@ -160,6 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppUI.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Panel.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="src\imgui-SFML.cpp" />
     <ClCompile Include="src\imgui.cpp" />

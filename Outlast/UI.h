@@ -8,7 +8,8 @@
 class UIClass
 {
  public:
-   UIClass(sf::RenderWindow& window, std::string Path)
+   UIClass(sf::RenderWindow& window,
+           std::string Path)
    {
      m_window = &window;
      m_textureButton = new sf::Texture(Path.c_str(), false, sf::IntRect());
@@ -24,9 +25,11 @@ class UIClass
 
   Panel m_panel;
   Panel m_panelSettings;
+  Panel m_panelSettingsClose;
   std::vector<Button> m_buttons;
   std::vector<Button> m_SliderBars;
   std::vector<Button> m_Settings;
+  std::vector<Button> m_SettingsClose;
   sf::Texture* m_textureButton;
 
   sf::RectangleShape m_bottom;
