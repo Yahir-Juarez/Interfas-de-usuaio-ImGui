@@ -4,6 +4,7 @@ const sf::Vector2f sizeButton(600, 70);
 const sf::Vector2f sizeButtonText(475, 45);
 const sf::Vector2f sizeButtonSettings(350, 45);
 const sf::Vector2f sizeButtonGlobalSettings(200, 40);
+const sf::Vector2f sizeButtonMenuSettings(250, 45);
 
 using std::vector;
 using std::string;
@@ -219,6 +220,12 @@ void App::createUI()
 					 Vector2f(50, 50),
 					 sizeButtonText,
 					 cButtonBlack, 11),
+
+								 Button(vector<string>{"ELEMENTOS DE INTERFAZ"},
+			 Vector2f(50, 105),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
+
 		Button(vector<string>{"OCULTAR", "PERMANENTE", "NO"},
 					 sf::Vector2f(posX, 175),
 					 sizeButtonSettings,
@@ -325,43 +332,53 @@ Button(vector<string>{"Nombre de participantes"},
 			sizeButtonText,
 			cButtonBlack, 11),
 
-		Button(vector<string>{"NO", "SI"}, sf::Vector2f(posX, 895), sizeButtonSettings,
+			Button(vector<string>{"JUGABILIDAD"},
+			Vector2f(50, 885),
+			sizeButtonMenuSettings,
+			ImVec4(0, 0, 0, 0), 1),
+
+		Button(vector<string>{"NO", "SI"}, sf::Vector2f(posX, 955), sizeButtonSettings,
 					 cButtonBlack, 25),
 					 //Text
 					 Button(vector<string>{"Ocultar objeto tras demora"},
-					 Vector2f(50, 895),
+					 Vector2f(50, 955),
 					 sizeButtonText,
 					 cButtonBlack, 11),
 
-		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 950), sizeButtonSettings,
+		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1010), sizeButtonSettings,
 					 cButtonBlack, 26),
 					 //Text
 			Button(vector<string>{"Movimiento de cabeza"},
-			Vector2f(50, 950),
+			Vector2f(50, 1010),
 			sizeButtonText,
 			cButtonBlack, 11),
 
-		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1075), sizeButtonSettings,
+			Button(vector<string>{"NOTIFICACIONES"},
+			Vector2f(50, 1065),
+			sizeButtonMenuSettings,
+			ImVec4(0, 0, 0, 0), 1),
+
+		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1120), sizeButtonSettings,
 					 cButtonBlack, 27),
 					 //Text
 					 Button(vector<string>{"Aviso de amistad en linea"},
-					 Vector2f(50, 1075),
+					 Vector2f(50, 1120),
 					 sizeButtonText,
 					 cButtonBlack, 11),
 
-		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1130), sizeButtonSettings,
+		Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1175), sizeButtonSettings,
 					 cButtonBlack, 28),
 	//Text
 	Button(vector<string>{"Solicitud de amistad"},
-		Vector2f(50, 1130),
+		Vector2f(50, 1175),
 		sizeButtonText,
 		cButtonBlack, 11),
 
-							Button(vector<string>{"SI", "SOLO AMISTADES", "NO"}, sf::Vector2f(posX, 1185), sizeButtonSettings,
+							Button(vector<string>{"SI", "SOLO AMISTADES", "NO"}, sf::Vector2f(posX, 1230), sizeButtonSettings,
 					 cButtonBlack, 29),
 					 //Text
 					 Button(vector<string>{"Solicitud de invitacion a grupo"},
-					 Vector2f(50, 1185),
+					 Vector2f(50, 1230),
 					 sizeButtonText,
 					 cButtonBlack, 11)
 	};
@@ -494,6 +511,11 @@ Button(vector<string>{"Sensibilidad de vista"},
 		 sizeButtonText,
 		 cButtonBlack, 11),
 
+					 Button(vector<string>{"CONTROL"},
+			 Vector2f(50, 380),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
+
 	Button(vector<string>{"PERSONALIZAR CONTROL"},
 				 Vector2f(posX, 450),
 				 sizeButtonSettings,
@@ -590,73 +612,191 @@ Button(vector<string>{"Toca para interactuar (control)"},
   //////////////////////////////////////////Graficas/////////////////////////////////////////
 
 	std::vector<Button> buttonsGraphics = {
-Button(vector<string>{"GENERIC PNP MONITOR", "TYPEC"}, sf::Vector2f(posX, 325), sizeButtonSettings,
-			 cButtonBlack, 51),
+		Button(vector<string>{"VENTANAS SIN BORDES", "VENTANA", "PANTALLA COMPLETA"},
+			 Vector2f(posX, 50),
+			 sizeButtonSettings,
+			 cButtonBlack, 70),
 			 //Text
-Button(vector<string>{"Modo ventana"},
+		Button(vector<string>{"Modo ventana"},
 		Vector2f(50, 50),
 		sizeButtonText,
 		cButtonBlack, 11),
+Button(vector<string>{"2560 X 1140"}, sf::Vector2f(posX, 105), sizeButtonSettings,
+			 cButtonBlack, 71),
+	Button(vector<string>{"Resolucion"},
+				 Vector2f(50, 105),
+				 sizeButtonText,
+				 cButtonBlack, 11),
+
+Button(vector<string>{"N/A"}, sf::Vector2f(posX, 160), sizeButtonSettings,
+			 cButtonBlack, 72),
+		Button(vector<string>{"Tasa de actualizacion"},
+				 Vector2f(50, 160),
+				 sizeButtonText,
+				 cButtonBlack, 11),
+
+Button(vector<string>{"Escala de resolucion (en %)"},
+				 Vector2f(50, 215),
+				 sizeButtonText,
+				 cButtonBlack, 12),
+
+				 Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 270), sizeButtonSettings,
+			 cButtonBlack, 72),
+		Button(vector<string>{"V-Snyc"},
+				 Vector2f(50, 270),
+				 sizeButtonText,
+				 cButtonBlack, 11),
+
+Button(vector<string>{"GENERIC PNP MONITOR", "TYPEC"}, sf::Vector2f(posX, 325), sizeButtonSettings,
+			 cButtonBlack, 51),
+							 Button(vector<string>{"Pantalla"},
+				 Vector2f(50, 325),
+				 sizeButtonText,
+				 cButtonBlack, 11),
 
 Button(vector<string>{"NO", "30", "40", "50", "60", "75", "90", "100", "120", "144", "160", "165", "180", "200", "240", "360", "480"},
 			 Vector2f(posX, 380),
 			 sizeButtonSettings,
 			 cButtonBlack, 52),
 			 //Text
-Button(vector<string>{"Combinacion de teclas"},
-		Vector2f(50, 50),
+Button(vector<string>{"Limite de cuadrados"},
+		Vector2f(50, 380),
 		sizeButtonText,
 		cButtonBlack, 11),
 
+	Button(vector<string>{"COLORES"},
+			 Vector2f(50, 435),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
+
 	Button(vector<string>{"NO"}, sf::Vector2f(posX, 505), sizeButtonSettings,
 			 cButtonBlack, 53),
+			 Button(vector<string>{"HDR"},
+		Vector2f(50, 505),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 Button(vector<string>{"AJUSTAR"}, sf::Vector2f(posX, 560), sizeButtonSettings,
 			 cButtonBlack, 54, UI::BRIGHT),
+						 Button(vector<string>{"Ajuste de brillo"},
+		Vector2f(50, 560),
+		sizeButtonText,
+		cButtonBlack, 11),
+
+	Button(vector<string>{"CALIDAD"},
+			 Vector2f(50, 615),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
 
 
 Button(vector<string>{"PERSONALIZADA", "BAJA", "MEDIA", "PERSONALIZADA", "EPICA"},
        sf::Vector2f(posX, 685), sizeButtonSettings,
 			 cButtonBlack, 55),
+						 Button(vector<string>{"Preajuste de calidad"},
+		Vector2f(50, 685),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 740), sizeButtonSettings,
 			 cButtonBlack, 56),
+						 Button(vector<string>{"Geometria"},
+		Vector2f(50, 740),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 795), sizeButtonSettings,
 			 cButtonBlack, 57),
+						 Button(vector<string>{"SOMBRAS"},
+		Vector2f(50, 795),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 			 Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 850), sizeButtonSettings,
 			 cButtonBlack, 58),
+						 Button(vector<string>{"TEXTURAS"},
+		Vector2f(50, 850),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 905), sizeButtonSettings,
 			 cButtonBlack, 59),
+						 Button(vector<string>{"EFECTOS"},
+		Vector2f(50, 905),
+		sizeButtonText,
+		cButtonBlack, 11),
+
 		Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 960), sizeButtonSettings,
 			 cButtonBlack, 60),
+			 Button(vector<string>{"REFLEJOS"},
+			 Vector2f(50, 960),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 Button(vector<string>{"BAJA", "MEDIA", "PERSONALIZADA", "EPICA"}, sf::Vector2f(posX, 1015), sizeButtonSettings,
 			 cButtonBlack, 61),
+			 Button(vector<string>{"VOLUMETRICO"},
+			 Vector2f(50, 1015),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 			 Button(vector<string>{"SUAVIZADO TEMPORAL", "SUAVIZADO TEMPORAL (ALTO)", "NO", "FXAA"}, sf::Vector2f(posX, 1070), sizeButtonSettings,
 			 cButtonBlack, 62),
+			 Button(vector<string>{"SUAVIZADO"},
+			 Vector2f(50, 1070),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 			 Button(vector<string>{"EJECUTAR"}, sf::Vector2f(posX, 1125), sizeButtonSettings,
 			 cButtonBlack, 63),
+			 Button(vector<string>{"Ajustes de calidad automaticos"},
+			 Vector2f(50, 1125),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+	Button(vector<string>{"OPCIONES AVANZADAS"},
+		Vector2f(50, 1180),
+		sizeButtonMenuSettings,
+		ImVec4(0, 0, 0, 0), 11),
+
 	Button(vector<string>{"DIRECTX 12", "DIRECTX 11"}, sf::Vector2f(posX, 1250), sizeButtonSettings,
 			 cButtonBlack, 64),
+			 Button(vector<string>{"Version de DirectX"},
+			 Vector2f(50, 1250),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 			 Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 1305), sizeButtonSettings,
 			 cButtonBlack, 65),
-	Button(vector<string>{"NO", "AUTOMATICO", " CALIDAD (X1.5)", "EQUILIBRADO (X1.7)", "RENDIMIENTO (X2.0)", "ULTRARENDIMIENTO (X3.0)"}, sf::Vector2f(posX, 1200), sizeButtonSettings,
+			 Button(vector<string>{"Desenfoque"},
+			 Vector2f(50, 1305),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+	Button(vector<string>{"NO", "AUTOMATICO", " CALIDAD (X1.5)", "EQUILIBRADO (X1.7)", "RENDIMIENTO (X2.0)", "ULTRARENDIMIENTO (X3.0)"}, sf::Vector2f(posX, 1360), sizeButtonSettings,
 			 cButtonBlack, 66),
-				Button(vector<string>{"NO", "SI"}, sf::Vector2f(posX, 1360), sizeButtonSettings,
+			 Button(vector<string>{"Nvidia DLSS"},
+			 Vector2f(50, 1360),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+				Button(vector<string>{"NO", "SI"}, sf::Vector2f(posX, 1415), sizeButtonSettings,
 			 cButtonBlack, 67),
-							Button(vector<string>{"NO"}, sf::Vector2f(posX, 1415), sizeButtonSettings,
-			 cButtonBlack, 68)
+			 Button(vector<string>{"Habilitar trazado de rayos"},
+			 Vector2f(50, 1415),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+							Button(vector<string>{"NO"}, sf::Vector2f(posX, 1470), sizeButtonSettings,
+			 cButtonBlack, 68),
+			 Button(vector<string>{"Reflejo de trazado de rayos"},
+				 Vector2f(50, 1470),
+				 sizeButtonText,
+				 cButtonBlack, 11),
 	};
 
 	std::vector<Button> progressBar2 = {
-Button(vector<string>{""},
-       0.5f,
-			 Vector2f(posX, 50),
-			 sizeButtonSettings,
-			 cButtonBlack, 70),
-Button(vector<string>{""}, 0.5f, sf::Vector2f(posX, 105), sizeButtonSettings,
-			 cButtonBlack, 71),
-Button(vector<string>{""}, 0.5f, sf::Vector2f(posX, 160), sizeButtonSettings,
-			 cButtonBlack, 72),
-Button(vector<string>{""}, 0.5f, sf::Vector2f(posX, 270), sizeButtonSettings,
-			 cButtonBlack, 73),
+Button(vector<string>{""}, 1.0f, sf::Vector2f(posX, 215), sizeButtonSettings,
+			 cButtonBlack, 73), 
 	};
 
 	UIClass* ui5 = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/6.jpg");
@@ -691,19 +831,57 @@ Button(vector<string>{"Invertir el eje horizontal"},
 
 Button(vector<string>{"NO", "25%", "50%", "75%", "100%"}, sf::Vector2f(posX, 215), sizeButtonSettings,
 			 cButtonBlack, 74),
+Button(vector<string>{"Filtro de tinnitus"},
+			 Vector2f(50, 215),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+			 Button(vector<string>{"CHAT DE VOZ"},
+			 Vector2f(50, 270),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
 
 
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 340), sizeButtonSettings,
 			 cButtonBlack, 75),
+			 Button(vector<string>{"Chat de voz"},
+			 Vector2f(50, 340),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 395), sizeButtonSettings,
 			 cButtonBlack, 76),
+			 Button(vector<string>{"Pulsar para hablar"},
+			 Vector2f(50, 395),
+			 sizeButtonText,
+			 cButtonBlack, 11),
 
 
 Button(vector<string>{"DISPOSITIVOS DE SISTEMA PREDETERMINADO", "DISPOSITIVOS DE COMUNICACIONES PREDETERMINADO", "AURICULARES CON AUDIFONOS", "MICROFONO", "MICROPHONE ARRAY"},
 sf::Vector2f(posX, 450), sizeButtonSettings,
 			 cButtonBlack, 77),
-							Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 615), sizeButtonSettings,
+			 Button(vector<string>{"Dispositivo de entrada"},
+			 Vector2f(50, 450),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+			 Button(vector<string>{"Volumen de chat de voz"},
+			 Vector2f(50, 505),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+			 Button(vector<string>{"Volumen del microfono"},
+			 Vector2f(50, 560),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+
+	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 615), sizeButtonSettings,
 			 cButtonBlack, 78),
+			 Button(vector<string>{"Ajustes de deteccion de voz automaticos"},
+			 Vector2f(50, 615),
+			 sizeButtonText,
+			 cButtonBlack, 11),
 	};
 
 	std::vector<Button> progressAudio = {
@@ -745,23 +923,71 @@ Button(vector<string>{""},
 	std::vector<Button> buttonsConexion = {
 			Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 50), sizeButtonSettings,
 				 cButtonBlack, 84),
+				 Button(vector<string>{"Multiplataforma"},
+			 Vector2f(50, 50),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
+			 Button(vector<string>{"REGIONES"},
+			 Vector2f(50, 105),
+			 sizeButtonMenuSettings,
+			 ImVec4(0, 0, 0, 0), 11),
 
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 175), sizeButtonSettings,
 				 cButtonBlack, 85),
+				 Button(vector<string>{"Estados unidos (oeste) - 125"},
+			 Vector2f(50, 175),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 230), sizeButtonSettings,
 				 cButtonBlack, 86),
+				 Button(vector<string>{"America del Sur - 203"},
+			 Vector2f(50, 230),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 					Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 285), sizeButtonSettings,
 				 cButtonBlack, 87),
+				 Button(vector<string>{"Europa (central) - 187"},
+			 Vector2f(50, 285),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 340), sizeButtonSettings,
 				 cButtonBlack, 88),
+				 Button(vector<string>{"Asia Pacifico (noreste) - 265"},
+			 Vector2f(50, 340),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 					Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 395), sizeButtonSettings,
 				 cButtonBlack, 89),
+				 Button(vector<string>{"Asia Pacifico (sureste) - 265"},
+			 Vector2f(50, 395),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 450), sizeButtonSettings,
 				 cButtonBlack, 90),
+				 Button(vector<string>{"Oceania (Sidney) - 250"},
+			 Vector2f(50, 450),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 					Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 505), sizeButtonSettings,
 				 cButtonBlack, 91),
+				 Button(vector<string>{"Oriente Medio (sur) - 984"},
+			 Vector2f(50, 505),
+			 sizeButtonText,
+			 cButtonBlack, 11),
+
 	Button(vector<string>{"SI", "NO"}, sf::Vector2f(posX, 560), sizeButtonSettings,
-				 cButtonBlack, 92)
+				 cButtonBlack, 92),
+				 Button(vector<string>{"America del Sur - 94"},
+			 Vector2f(50, 560),
+			 sizeButtonText,
+			 cButtonBlack, 11)
 	};
 
 
@@ -776,19 +1002,19 @@ Button(vector<string>{""},
 
 	Panel panelPlayGame(sf::Vector2f(1940, 1100), 0.0f, "a", sf::Vector2f(-20, -20));
 
-	UIClass* ui8Inicio = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/6.jpg");
+	UIClass* ui8Inicio = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/Gameplay.png");
 	m_ui.push_back(ui8Inicio);
 	m_ui[7]->m_panel = panelPlayGame;
 	m_ui[7]->m_panelSettingsClose = panelClose;
 	m_ui[7]->m_SettingsClose = buttonsSettingsExit;
 
-	UIClass* ui9tutorial = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/5.jpg");
+	UIClass* ui9tutorial = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/Tutorial.png");
 	m_ui.push_back(ui9tutorial);
 	m_ui[8]->m_panel = panelPlayGame;
 	m_ui[8]->m_panelSettingsClose = panelClose;
 	m_ui[8]->m_SettingsClose = buttonsSettingsExit;
 
-	UIClass* ui10tutorial = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/5.jpg");
+	UIClass* ui10tutorial = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/Creditos.png");
 	m_ui.push_back(ui10tutorial);
 	m_ui[9]->m_panel = panelPlayGame;
 	m_ui[9]->m_panelSettingsClose = panelClose;
@@ -869,16 +1095,24 @@ Button(vector<string>{"TACTICO"}, sf::Vector2f(300, 50), sizeButtonSettings,
 				 cButtonBlack, 12, UI::EXIT_TO_GRAPHICS)
 	};
 
-	Panel panelBright(sf::Vector2f(1000, 110), 0.0f, "AJUSTES/BRILLO", sf::Vector2f(500, 100));
+	Panel panelBright(sf::Vector2f(1000, 110), 0.0f, "Ajuste de brillo", sf::Vector2f(50, 900));
+
+	std::vector<Button> buttonBright = {
+				Button(vector<string>{"Brillo"},
+			 Vector2f(50, 50),
+			 sizeButtonText,
+			 cButtonBlack, 11)
+	};
 
 	std::vector<Button> buttonsBrightModdificy = {
-		Button(vector<string>{"CLASICO"}, 0.5f, sf::Vector2f(20, 900), sizeButtonSettings,
+		Button(vector<string>{""}, 0.5f, sf::Vector2f(600, 50), sizeButtonMenuSettings,
 			 cButtonBlack, 84)
 	};
 	UIClass* ui15 = new UIClass(ventana, "C:/Users/super/OneDrive/Escritorio/Septimo/Interfas de usuaio ImGui/Outlast/Brillo.png");
 	m_ui.push_back(ui15);
+	m_ui[14]->m_buttons = buttonBright;
 	m_ui[14]->m_SliderBars = buttonsBrightModdificy;
-	m_ui[14]->m_panel = panelControls;
+	m_ui[14]->m_panel = panelBright;
 	m_ui[14]->m_panelSettingsClose = panelClose;
 	m_ui[14]->m_SettingsClose = buttonsControlExit2;
 }
